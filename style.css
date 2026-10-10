@@ -1,0 +1,962 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: var(--texto);
+}
+
+:root {
+  --texto: #fff;
+}
+
+:root.claro {
+  --texto: #0b1b2b;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.tudoimagem {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #02030f;
+  background-image: url('ChatGPT Image 4 de set. de 2026, 23_07_21 1.png');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: top center;
+}
+
+.brilho {
+  position: absolute;
+  inset: 0;
+  background-image: url('ChatGPT Image 4 de set. de 2026, 23_07_21 1.png');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: top center;
+  filter: brightness(3.2) drop-shadow(0 0 6px white);
+  mask-image: radial-gradient(circle 120px at var(--x, 50%) var(--y, 50%), black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 120px at var(--x, 50%) var(--y, 50%), black 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+  padding-left: 38%;
+  padding-top: 1.2%;
+  gap: clamp(0.3rem, 1vw, 1rem);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+
+.menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212121;
+  border-radius: 30px;
+  padding: 0.5em 0.9em;
+  color: white;
+  white-space: nowrap;
+}
+
+.menu h1 {
+  font-size: clamp(0.55rem, 0.6rem + 0.35vw, 1.125rem);
+  font-family: "Intel One Mono", monospace;
+  font-weight: 400;
+}
+
+.git1 {
+  margin-left: auto;
+  font-family: 'Inter';
+  font-size: clamp(0.7rem, 0.6rem + 0.4vw, 0.875rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.git1 img {
+  width: 100%;
+  height: 2.7vh;
+}
+
+.git1 h4 {
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.modo {
+  background-color: #0d0d0d;
+  border-radius: 10px;
+  padding: 0.2%;
+  margin-right: 3%;
+}
+
+.modo img {
+  height: clamp(0.9rem, 0.8rem + 0.6vw, 1.4rem);
+  width: auto;
+  display: block;
+}
+
+
+.secnome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 19%;
+  padding-top: 30vh;
+  margin-bottom: 40vh;
+}
+
+
+.deven {
+  font-family: "Intel One Mono", monospace;
+  font-size: clamp(0.65rem, 0.4rem + 0.6vw, 2rem);
+  letter-spacing: 0.4em;
+  color: #3df0e6;
+  margin-bottom: 0.3em;
+  padding-left: 0.6%;
+  font-weight: 500;
+}
+
+.estrela {
+  position: absolute;
+  top: -1.5em;
+  left: 45%;
+  width: 2.5em;
+  height: 2.5em;
+  mix-blend-mode: screen;
+}
+
+.esth {
+  position: relative;
+  font-family: "Gabriela", serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 10.5vw, 12rem);
+  line-height: 0.85;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.verfalar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.8rem, 6vw, 6.5rem);
+  margin-top: clamp(1rem, 3vw, 2.5rem);
+  padding-left: 1%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(8rem, 14vw, 13.5rem);
+  padding: 0.9em 1.4em;
+  font-family: "Intel One Mono", monospace;
+  font-size: clamp(0.45rem, 0.45rem + 0.6vw, 1rem);
+  letter-spacing: 0.05em;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+  gap: 0.6em;
+}
+
+.btn-ciano {
+  color: #22d3ee;
+  border-color: #1fb8d8;
+}
+
+.btn-ciano:hover {
+  background: rgba(34, 211, 238, 0.12);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+}
+
+.btn-roxo {
+  color: #a9a1ff;
+  border-color: #7b6fe0;
+}
+
+.btn-roxo:hover {
+  background: rgba(123, 111, 224, 0.15);
+  box-shadow: 0 0 18px rgba(123, 111, 224, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.seta {
+  color: inherit;
+  font-size: 1.3em;
+  line-height: 1;
+}
+
+
+.secsobre {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  align-items: start;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 3rem) clamp(0.75rem, 4.5vw, 4.5rem);
+}
+
+.sobloco {
+  background-color: rgba(15, 51, 81, 0.7);
+  border-radius: clamp(18px, 2.4vw, 34px);
+  padding: clamp(1rem, 2.2vw, 2.2rem) clamp(1rem, 3vw, 3rem) clamp(1.5rem, 3vw, 3rem);
+  min-height: clamp(14rem, 25vw, 24rem);
+}
+
+.letramaior {
+  position: relative;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.2rem + 1.5vw, 4rem);
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.text {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  margin-top: 6vh;
+}
+
+.divD {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 1.4vw, 1.4rem);
+}
+
+.blocoD {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8em;
+  padding: clamp(0.7rem, 1.4vw, 1.2rem) clamp(0.7rem, 1vw, 0.9rem);
+  font-family: "Inter", sans-serif;
+  background-color: rgba(15, 51, 81, 0.7);
+}
+
+.descr {
+  font-weight: 300;
+  font-size: clamp(0.72rem, 0.55rem + 0.5vw, 1rem);
+}
+
+.menor {
+  font-weight: 600;
+  font-size: clamp(0.62rem, 0.5rem + 0.35vw, 0.8rem);
+  text-align: right;
+}
+
+.menor sup {
+  font-size: 0.65em;
+  vertical-align: top;
+  margin-left: 0.3em;
+}
+
+.experiencia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.6rem, 5vw, 4.5rem);
+}
+
+.exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  padding: clamp(0.8rem, 1.6vw, 1.4rem) 0.5rem;
+  text-align: center;
+  background-color: rgba(15, 51, 81, 0.7);
+}
+
+.exp h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 1rem + 2.4vw, 3.2rem);
+  line-height: 1;
+}
+
+.exp h3 {
+  color: #0288f7;
+  font-size: clamp(0.6rem, 0.5rem + 0.6vw, 1rem);
+}
+
+
+.secskills {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 3rem) clamp(0.75rem, 4.5vw, 4.5rem);
+  margin-top: 30vh;
+}
+
+.skillbloco {
+  padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 4vw, 4rem) clamp(1.5rem, 4vw, 4rem);
+  background-color: rgba(15, 51, 81, 0.6);
+}
+
+.skilmaior {
+  text-align: center;
+  font-family: "Iosevka Charon", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 0.8rem + 2vw, 2.8rem);
+  letter-spacing: 0.03em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.skilgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.5rem, 5vw, 5rem) clamp(0.5rem, 2vw, 2rem);
+  margin-top: clamp(1.5rem, 5vw, 5rem);
+  justify-items: center;
+}
+
+.hablit {
+ 
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  text-align: center;
+  --icone: clamp(3.5rem, 8vw, 8rem);
+  cursor: pointer;
+}
+
+.skillimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icone);
+  height: var(--icone);
+}
+
+.hablit h1 {
+  font-family: "Intel One Mono", monospace;
+  font-weight: 600;
+  font-size: clamp(0.65rem, 0.5rem + 0.5vw, 1rem);
+  line-height: 1.2;
+}
+
+.descricao {
+  display: none;
+  width: 100%;
+  min-height: var(--icone);
+  padding: 0.8em;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.6rem, 0.45rem + 0.55vw, 0.95rem);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.hablit.ativo .skillimg {
+  display: none;
+}
+
+.hablit.ativo .descricao {
+  display: block;
+  animation: aparecer 0.25s ease;
+}
+
+.hablit.ativo {
+  z-index: 10;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
+.secproject {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 20vh auto 0;
+  padding: clamp(1rem, 3vw, 3rem) clamp(0.75rem, 4.5vw, 4.5rem) clamp(2rem, 6vw, 6rem);
+}
+
+.projetos-titulo {
+  width: min(100%, 40rem);
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Iosevka Charon", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 0.8rem + 2.6vw, 3.5rem);
+  letter-spacing: 0.03em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.projetgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-top: clamp(1.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.prodivE {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.projetimg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ecommerce,
+.loja {
+  font-family: "Iosevka Charon", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 0.5rem + 1vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+h3.ecommerce {
+  margin-top: 0.3em;
+}
+
+.gi2,
+.git2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.6em;
+  padding: 0.3em 0.6em 0.3em 0.3em;
+  border: 1px solid #9EA0FF;
+  background: transparent;
+  color: #9EA0FF;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.65rem, 0.5rem + 0.5vw, 1rem);
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.gi2 img,
+.git2 img {
+  height: 1.6em;
+  width: auto;
+  display: block;
+}
+
+.gi2:hover,
+.git2:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.3);
+}
+
+
+.seccont {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 15vh auto 0;
+  padding: clamp(1rem, 3vw, 3rem) clamp(0.75rem, 4.5vw, 4.5rem) clamp(2rem, 6vw, 6rem);
+  scroll-margin-top: 4rem;
+}
+
+.entre {
+  font-family: "Iosevka Charon", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 0.8rem + 2.6vw, 3.5rem);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5em;
+}
+
+.contatgrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.forme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+.form-caixa {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.4rem, 0.8vw, 0.7rem);
+  padding: clamp(0.5rem, 1vw, 0.9rem);
+  background-color: #121212;
+}
+
+.form-caixa input,
+.form-caixa textarea {
+  width: 100%;
+  padding: 0.9em 1.1em;
+  border: none;
+  border-radius: 12px;
+  background-color: #e1eff5;
+  color: #1b4a5c;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.6rem + 0.5vw, 1.1rem);
+  outline: none;
+}
+
+.form-caixa textarea {
+  min-height: clamp(9rem, 20vw, 17rem);
+  resize: vertical;
+}
+
+.form-caixa ::placeholder {
+  color: #5f93a8;
+  opacity: 1;
+}
+
+.form-caixa input:focus,
+.form-caixa textarea:focus {
+  box-shadow: 0 0 0 2px #0288f7;
+}
+
+.form-enviar {
+  min-width: clamp(7rem, 12vw, 11.5rem);
+  padding: 0.5em 1em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background-color: #1b1b1b;
+  color: #ddd;
+  font-family: "Intel One Mono", monospace;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 0.6rem + 0.8vw, 1.4rem);
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.form-enviar:hover {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 14px rgba(2, 136, 247, 0.4);
+}
+
+.ladin {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 4vw, 3.5rem);
+  margin-top: clamp(0rem, 6vw, 5rem);
+}
+
+.work {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.5rem, 1vw, 0.9rem);
+  background-color: #121212;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.work:hover {
+  background-color: rgba(60, 60, 60, 0.8);
+  transform: translateY(-2px);
+}
+
+.contatimg {
+  width: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+  height: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.work div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.quase {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.6rem, 0.5rem + 0.3vw, 0.8rem);
+  color: #0288f7;
+}
+
+.acabando {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 0.5rem + 0.6vw, 1.1rem);
+  overflow-wrap: anywhere;
+}
+
+
+.modal {
+  margin: auto;
+  width: min(90%, 24rem);
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: none;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+.modal[open] {
+  animation: aparecer 0.25s ease;
+}
+
+.modal-titulo {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.modal-texto {
+  margin-top: 0.5em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.modal-btn {
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.modal-btn:hover {
+  filter: brightness(1.15);
+}
+
+.modal-cancelar {
+  background: #e3e3e3;
+  color: #222;
+}
+
+.modal-confirmar {
+  background: #0288f7;
+  color: #fff;
+}
+
+.final {
+  display: flex;
+  justify-content: center;
+  font-family: "Inter";
+  font-size: clamp(0.1rem, 0.3rem + 0.5vw, 0.7rem);
+}
+
+
+
+
+html.claro {
+
+  .tudoimagem {
+    background-color: #2a7de1;
+    background-image: url('ceu-_1764543088348.webp');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .brilho,
+  .estrela {
+    display: none;
+  }
+
+  .header {
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+  }
+
+  .menu {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 10px rgba(10, 60, 130, 0.2);
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  .git1 img {
+    filter: invert(1);
+  }
+
+  .modo {
+    background-color: #0a2540;
+    background-color: #689ae4;
+
+  }
+
+
+  .deven {
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 40, 100, 0.6);
+  }
+
+  .esth {
+    color: #fff;
+    text-shadow: 0 4px 24px rgba(0, 50, 120, 0.55);
+  }
+
+  .btn {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .btn-ciano {
+    color: #0b5fd6;
+    border-color: #0b5fd6;
+  }
+
+  .btn-roxo {
+    color: #3a2fb8;
+    border-color: #3a2fb8;
+  }
+
+  .btn-ciano:hover,
+  .btn-roxo:hover {
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(10, 60, 130, 0.3);
+  }
+
+  .sobloco,
+  .blocoD,
+  .exp,
+  .skillbloco,
+  .work,
+  .form-caixa {
+    background-color: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 28px rgba(10, 60, 130, 0.25);
+    backdrop-filter: blur(10px);
+  }
+
+  .work:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .exp h3,
+  .quase {
+    color: #0b5fd6;
+  }
+
+
+  .letramaior,
+  .skilmaior {
+    border-bottom-color: #0a2540;
+  }
+
+  .projetos-titulo,
+  .entre {
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 50, 120, 0.55);
+  }
+
+  .projetos-titulo {
+    border-bottom-color: #fff;
+  }
+
+  .descricao {
+    border: 1px solid #cfe0f5;
+    box-shadow: 0 8px 24px rgba(10, 60, 130, 0.25);
+  }
+
+  .ecommerce,
+  .loja {
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 40, 100, 0.65);
+  }
+
+  .projetimg {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(10, 60, 130, 0.35);
+  }
+
+  .gi2,
+  .git2 {
+    color: #0b5fd6;
+    border-color: #0b5fd6;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+
+    &:hover {
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(10, 60, 130, 0.35);
+    }
+  }
+
+  .form-caixa {
+    input,
+    textarea {
+      background-color: #fff;
+      color: #0a2540;
+    }
+
+    ::placeholder {
+      color: #6b87a8;
+    }
+  }
+
+  .form-enviar {
+    background-color: #0b5fd6;
+    border-color: #0b5fd6;
+    color: #fff;
+
+    &:hover {
+      background-color: #0a4fb3;
+    }
+  }
+
+  .final h2 {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 40, 100, 0.6);
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .tudoimagem {
+    min-height: 100vh;
+  }
+
+  .header {
+    padding-top: 4%;
+    padding-left: 2%;
+    font-size: 5px;
+  }
+
+  .git1 img {
+    width: 80%;
+    height: 2vh;
+  }
+
+  .secnome {
+    padding-left: 2%;
+    padding-top: 15vh;
+    margin-bottom: 10vh;
+  }
+
+  .estrela {
+    top: -1.45em;
+    left: 3.6em;
+  }
+
+  .deven {
+    letter-spacing: 0.25em;
+    font-size: 8px;
+  }
+
+  .esth {
+    font-size: 4em;
+  }
+
+  .verfalar {
+    gap: 0.7rem;
+    padding-left: 0;
+  }
+
+  .sobloco {
+    border-radius: 20px;
+    min-height: 0;
+  }
+
+  .text {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .blocoD {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .descr {
+    font-size: 0.8rem;
+  }
+
+  .menor {
+    font-size: 0.68rem;
+  }
+
+  .experiencia {
+    gap: 0.6rem;
+  }
+
+  .skilgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem 0.5rem;
+  }
+
+  .hablit img {
+    height: 8vh;
+  }
+
+  .hablit h1 {
+    font-size: 0.7rem;
+  }
+
+  .secskills {
+    margin-top: 10vh;
+  }
+
+  .projetgrid {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 5vw, 5rem);
+    margin-top: clamp(1.5rem, 5vw, 5rem);
+  }
+
+  .contatgrid {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 6vw, 7rem);
+  }
+}
